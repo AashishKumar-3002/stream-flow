@@ -38,8 +38,9 @@ def generate_categorization(transcription):
     if model_name is None:
         model_name = 'phi3'
     
+    print("Model Name:", model_name)
     response = ollama.generate(
-        model='model_name',
+        model=model_name,
         prompt=prompt,
         options={
             "seed": 42,
