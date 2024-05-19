@@ -3,3 +3,5 @@ credentials.json
 .venv/*
 *.pyc
 __pycache__/
+data/raw/
+data/preprocessed/
