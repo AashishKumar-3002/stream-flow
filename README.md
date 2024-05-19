@@ -1,7 +1,10 @@
 # stream-flow : Video Processing and Transcription Automation Data Pipeline
 
 ## Demo Video :
-Uploading DemoVideo (1).mp4…
+
+
+https://github.com/AashishKumar-3002/stream-flow/assets/110625812/eb79131f-1b63-4aeb-adb9-16ea4f654f34
+
 
 
 This project automates the process of downloading videos from URLs, transcribing them, updating transcriptions, and processing the data for final output. It supports parallel processing to handle multiple URLs simultaneously and ensures that files are uniquely identified to avoid conflicts.
