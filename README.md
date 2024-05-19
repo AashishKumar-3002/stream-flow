@@ -30,6 +30,7 @@ This project automates the process of downloading videos from URLs, transcribing
   - `concurrent.futures`
   - `flask`
   - Other dependencies as mentioned in `requirements.txt`
+- Make sure you have sign-in to your Youtube and instagram account on your default browser to avoid any error while downloading the video by `yt_dlp`.
 
 ## Installation
 1. `Clone` the repository:
