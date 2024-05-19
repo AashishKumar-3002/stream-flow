@@ -56,9 +56,21 @@ This project automates the process of downloading videos from URLs, transcribing
    ```
 
 3. Install the required `dependencies`:
-   ```bash
-    pip install -r requirements.txt
-   ```
+
+  - For `Linux` and `MacOS`:
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+  - For `Windows`:
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate
+    ```
+  - Install the required packages:
+    ```bash
+      pip install -r requirements.txt
+    ```
 
 4. Whisper also requires `Tiktoken` if you do not encounter any error in the above tiktoken installation. Then you may skip the below steps else follow the steps below.
 
