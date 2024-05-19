@@ -5,8 +5,8 @@ extraction:
 
 google:
   sheets:
-    credentials_file: "credentials.json"
-    spreadsheet_id: "1-aziZm13WFxdLEx0MHqT5VnSOC0LjvMQOAHsTsPoDxw"
+    credentials_file: "credentials.json" # Path to the credentials file
+    spreadsheet_id: "YOUR_SPREADSHEET_ID"
 
 paths:
   raw_videos: "data/raw"
