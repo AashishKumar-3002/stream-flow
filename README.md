@@ -1,4 +1,4 @@
-# Video Processing and Transcription Automation
+# stream-flow : Video Processing and Transcription Automation Data Pipeline
 
 This project automates the process of downloading videos from URLs, transcribing them, updating transcriptions, and processing the data for final output. It supports parallel processing to handle multiple URLs simultaneously and ensures that files are uniquely identified to avoid conflicts.
 
@@ -32,12 +32,12 @@ This project automates the process of downloading videos from URLs, transcribing
   - Other dependencies as mentioned in `requirements.txt`
 
 ## Installation
-1. Clone the repository:
+1. `Clone` the repository:
    ```bash
    git clone https://github.com/AashishKumar-3002/stream-flow.git
    cd stream-flow
 
-2. Install the required package(ffmpeg) mentioned in `package.txt`:
+2. Install the required package(`ffmpeg`) mentioned in `package.txt`:
    ```bash
     # on Ubuntu or Debian
     sudo apt update && sudo apt install ffmpeg
@@ -55,12 +55,12 @@ This project automates the process of downloading videos from URLs, transcribing
     scoop install ffmpeg
    ```
 
-3. Install the required dependencies:
+3. Install the required `dependencies`:
    ```bash
     pip install -r requirements.txt
    ```
 
-4. Whisper also requires Tiktoken if you do not encounter any error in the above tiktoken installation. Then you may skip the below steps else follow the steps below.
+4. Whisper also requires `Tiktoken` if you do not encounter any error in the above tiktoken installation. Then you may skip the below steps else follow the steps below.
 
     4.1. comment out the following line in `requirements.txt`:
     ```bash
@@ -78,6 +78,20 @@ This project automates the process of downloading videos from URLs, transcribing
 
     Note : The above basically means that you need to install the rust compiler on your system. and then source install the `tiktoken` package. setuptools-rust is a python package that allows you to compile rust code from python.
 
+5. Install `Ollama`:
+
+   To proceed, you need to have a local Ollama server running. Follow the steps below to set it up:
+
+   - Download Ollama from the official website: [https://ollama.com/](https://ollama.com/)
+   - Run an LLM (Ollama Language Model) from the Ollama library: [https://ollama.com/library](https://ollama.com/library)
+     - For instance, you can run the `phi3` model using the command: `ollama run phi3`
+
+   After setting up the Ollama environment, install and start the Ollama server on your local machine using the following commands:
+
+   ```bash
+   curl https://ollama.ai/install.sh | sh
+   ollama serve
+   ```
 ## Configuration &#128295;:
 
 Setting Up `config.yaml`:
@@ -105,6 +119,9 @@ Description of the fields in `config.yaml`:
   - `preprocessed_videos`: Path for storing preprocessed videos.
   - `processed_transcripts`: Path for storing processed transcripts.
   - `final_dir_name`: Name of the final output file.
+- `ollama`:
+  - `model_name`: Ollama model name (e.g., `phi3`). 
+  - I have use phi3 model in this project. You can use any model from the Ollama library.
 - `transcription`:
   - `model_name`: Whisper model name (e.g., `openai/whisper-small`).
   - `batch_size`: Batch size for processing.

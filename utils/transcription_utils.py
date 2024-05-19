@@ -1,7 +1,13 @@
 import ollama
 from utils.categorization_utils import extract_sections
+from utils.config_utils import load_config
 
 def generate_categorization(transcription):
+
+    config = load_config()
+    model_name = config['ollama']['model_name']
+
+
     prompt = f"""I have a transcript of a video, and I want to categorize its parts into four sections: Hook, Buildup, Body, and CTA.
 
     Please label each part accordingly without changing any content. The sections are defined as follows:
@@ -29,9 +35,11 @@ def generate_categorization(transcription):
         CTA: [Identify and label the CTA here]
         
     """
-
+    if model_name is None:
+        model_name = 'phi3'
+    
     response = ollama.generate(
-        model='phi3',
+        model='model_name',
         prompt=prompt,
         options={
             "seed": 42,
