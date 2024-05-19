@@ -3,6 +3,7 @@ import time
 import yt_dlp
 from utils.config_utils import load_config
 from utils.clean_title import get_clean_title
+from utils.unique_id import generate_unique_id
 import re
 
 def sanitize_title(title):
@@ -39,7 +40,10 @@ def download_video_audio(url):
         file_length_hms = time.strftime("%H:%M:%S", time.gmtime(file_length_s))
         print(f"Maximum length is {yt_length_limit_hms}, got {file_length_hms} video.")
         return
+    
     sanitize_new_title = sanitize_title(info["title"])
+    unique_id = generate_unique_id(url)
+    sanitize_new_title = f"{sanitize_new_title}_{unique_id}"
 
     ydl_opts = {
         "concurrent_fragment_downloads": 7,

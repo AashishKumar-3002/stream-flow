@@ -9,12 +9,12 @@ def generate_categorization(transcription):
     - **Hook:** The opening statement that grabs the audience's attention. usually first few lines.
     - **Build Up:** The section that provides context or setup for the main content. It typically follows the hook and sets the stage for the detailed content. line following just after hook.
     - **Body:** The main content or detailed information. This is the bulk of the transcript where most of the information is shared. Rest part.
-    - **CTA (Call to Action):** The closing statement that encourages the audience to take a specific action. Usually the last few lines."
+    - **CTA (Call to Action):** The closing statement that encourages the audience to take a specific action. Keep in mind that CTA is the last section of the transcript. Generally last few lines. You can pick the last 2-3 lines as CTA."
 
 
     Ensure the extracted sections are accurate and do not alter the content. Don't omit any single line in the Transcript. All the section are in order. 
     If any section is not found,  try to reiterate and look for it again. if still not found, then say: "The script provided does not contain a clear [section_name].
-    Keep in mind that CTA is the last section of the transcript. Generally last few lines.
+
     Please extract and structure the provided text in the same way and place it below in the placeholders.
     Transcript:
         {transcription}

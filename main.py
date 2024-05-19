@@ -3,10 +3,12 @@ from scripts.extract_videos import download_video_audio
 from scripts.transcribe_videos import video_transcribe
 from scripts.store_transcriptions import update_transcription
 from scripts.upsert_transcription import upsert
+from scripts.final_processing import fromat_transcription
 
 
 urls = [
-    'https://youtu.be/xN1-2p06Urc?si=dbxBktksL-AyZSqm',
+    'https://www.instagram.com/reel/C0eV7_fCYKs/?igsh=MXRsZGszODRobnJ1MA==',
+    'https://www.instagram.com/reel/C6wcq9xCAaX/'
 ]
 
 def process_url(url):
@@ -23,8 +25,15 @@ def process_url(url):
     # Upsert the transcription to Google Sheets
     upsert(video_title)
 
-# # Use a ThreadPoolExecutor to download, transcribe and rename the videos in parallel
-# with concurrent.futures.ThreadPoolExecutor() as executor:
-#     executor.map(process_url, urls)
+# Use a ThreadPoolExecutor to download, transcribe and rename the videos in parallel
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    executor.map(process_url, urls)
 
-process_url(urls[0])
+
+# Use the final_processing.py script
+processed_files = fromat_transcription(urls)
+if len(processed_files) == len(urls):
+    print("All files processed successfully")
+else:
+    print("Some files failed to process. You can try them later")
+    print("Processed files:", processed_files)

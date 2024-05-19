@@ -26,7 +26,7 @@ def save_transcription(transcription, file_path):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
 
-def process_urls(urls):
+def fromat_transcription(urls):
 
     config = load_config()
     pre_processed_dir = config["paths"]["preprocessed_videos"]
@@ -47,5 +47,5 @@ def process_urls(urls):
 
 if __name__ == "__main__":
     urls = ["https://www.instagram.com/reel/C6tMX9UAqgb/?igsh=MWV1c2dyZjczMXc4Yw==", "https://youtube.com/shorts/mZBEKEIKVLQ?si=n1MnbVS5gGGRp4ww", "https://youtu.be/Sew5tjbGgp0?si=lbQg0GoTgnRDvaA4"]
-    processed_files = process_urls(urls)
+    processed_files = fromat_transcription(urls)
     print("Processed files:", processed_files)
