@@ -33,6 +33,15 @@ def generate_categorization(transcription):
     response = ollama.generate(
         model='phi3',
         prompt=prompt,
+        options={
+            "seed": 42,
+            "repeat_last_n": 33,
+            "temperature": 0.7,
+            "main_gpu": 0,
+            "f16_kv": True,
+            "use_mmap": True,
+            "num_thread": 8
+        }
     )
 
     hook, buildup, cta = extract_sections(response['response'])
