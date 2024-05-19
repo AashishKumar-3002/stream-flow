@@ -1,0 +1,21 @@
+
+extraction:
+  video_length_limit_s : 3000
+  
+
+google:
+  sheets:
+    credentials_file: "credentials.json"
+    spreadsheet_id: "1-aziZm13WFxdLEx0MHqT5VnSOC0LjvMQOAHsTsPoDxw"
+
+paths:
+  raw_videos: "data/raw"
+  preprocessed_videos: "data/pre_processed"
+  processed_transcripts: "data/processed"
+  final_dir_name: "DataPipeline.json"
+
+transcription:
+  model_name: "openai/whisper-small"
+  batch_size: 8
+  file_limit_mb: 1000
+  huggingface_api_key: "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"
